@@ -1,7 +1,10 @@
-
+var Loading = document.getElementById('loader');
 // define the callAPI function that takes a first name and last name as parameters
 var callAPI = ()=>{
   // instantiate a headers object
+  
+  Loading.style.display = 'block';
+  
   var myHeaders = new Headers();
   // add content type header to object
   myHeaders.append("Content-Type", "application/json");
@@ -19,15 +22,21 @@ var callAPI = ()=>{
   .then(response => response.text())
   .then(result => {
     var str = JSON.parse(result).body;
-    var isViolent = str.includes("Violence");
+    var isViolent = str.includes("Outer Space");
     var isVisuallyDistrbing = str.includes("Visually Distrubing");
     var ViolenceMessage = document.getElementById('violence');
     var ViD = document.getElementById('vd');
+    var Nothing = document.getElementById('nothing');
+    
     if (isViolent){
+      Nothing.style.display = 'none';
       ViolenceMessage.style.display = 'block';
+      Loading.style.display = 'none';
     }
     if (isVisuallyDisturbing){
+      Nothing.style.display = 'none';
       ViD.style.display = 'block';
+      Loading.style.display = 'none';
     }
     
   })

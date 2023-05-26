@@ -100,24 +100,26 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-twothird">
         <h5>Security Camera Footage</h5>
-         <source src="movie.mp4" type="video/mp4">
+        <video src="movie.mp4" controls>
+        </video>
       </div>
       <div class="w3-third">
         <h5>Report</h5>
         <table class="w3-table w3-striped w3-white">
           <tr>
-            <p class="w3-center w3-text-grey">Nothing to show.</p>
+            <p id="nothing" class="w3-center w3-text-grey">Nothing to show.</p>
           </tr>
           <tr id="violence">
             <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-            <td><p id="report"></p></td>
-            <td><i>15 mins</i></td>
+            <td>Outer Space</td>
+            <td><i>>90% Confidence</i></td>
           </tr>
           <tr id="vd">
             <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
             <td>Visually Disturbing</td>
             <td><i>25 mins</i></td>
           </tr>
+          <div id="loader" class="loader" ></div>
           <!--<tr>
             <td><i class="fa fa-users w3-text-orange w3-large"></i></td>
             <td>New record, over 40 users.</td>
