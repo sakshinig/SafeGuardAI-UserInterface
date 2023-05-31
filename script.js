@@ -22,25 +22,36 @@ var callAPI = ()=>{
   .then(response => response.text())
   .then(result => {
     var str = JSON.parse(result).body;
-    var isViolent = str.includes("Riot");
+    var isRiot = str.includes("Riot");
     var isFire = str.includes("Gun");
+    var isWeapon = str.includes("Weapon");
     var ViolenceMessage = document.getElementById('violence');
     var ViD = document.getElementById('vd');
+    var Weapon = document.getElementById('wpn');
     var Nothing = document.getElementById('nothing');
+    var fcount = 0;
     
-    if (isViolent){
+    if  (isRiot){
       Nothing.style.display = 'none';
       ViolenceMessage.style.display = 'block';
-      Loading.style.display = 'none';
       document.getElementById("rcscore").innerHTML = str.slice(str.indexOf("Riot")+4+14, str.indexOf("Riot")+4+19) + "%";
+      fcount++;
     }
     if (isFire){
       Nothing.style.display = 'none';
       ViD.style.display = 'block';
-      Loading.style.display = 'none';
-      document.getElementById("cscore").innerHTML = str.slice(str.indexOf("Gun")+3+14, str.indexOf("Gun")+3+14+5) + "%";
-      
+      document.getElementById("cscore").innerHTML = str.slice(str.indexOf("Gun")+3+14, str.indexOf("Gun")+3+19) + "%";
+      fcount++;
     }
+    if (isWeapon){
+      Nothing.style.display = 'none';
+      Weapon.style.display = 'block';
+      document.getElementById("wscore").innerHTML = str.slice(str.indexOf("Weapon")+6+14, str.indexOf("Weapon")+6+19) + "%";
+      fcount++;
+    }
+    
+    document.getElementById("fcount").innerHTML = fcount;
+    Loading.style.display = 'none';
     
   })
   .catch(error => console.log('error', error));

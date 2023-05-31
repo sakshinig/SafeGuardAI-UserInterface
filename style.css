@@ -4,6 +4,9 @@
 #vd {
   display: none;
 }
+#wpn {
+  display: none;
+}
 #nothing {
   display: block;
 }
