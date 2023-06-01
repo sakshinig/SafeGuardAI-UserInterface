@@ -1,9 +1,20 @@
+var ViD = document.getElementById('vd');
+var Weapon = document.getElementById('wpn');
+var ViolenceMessage = document.getElementById('violence');
+
+
 var Loading = document.getElementById('loader');
 // define the callAPI function that takes a first name and last name as parameters
 var callAPI = ()=>{
   // instantiate a headers object
   
+  
   Loading.style.display = 'block';
+
+  ViolenceMessage.style.display = 'none';
+  ViD.style.display = 'none';
+  Weapon.style.display = 'none';
+
   
   var myHeaders = new Headers();
   // add content type header to object
@@ -25,9 +36,6 @@ var callAPI = ()=>{
     var isRiot = str.includes("Riot");
     var isFire = str.includes("Gun");
     var isWeapon = str.includes("Weapon");
-    var ViolenceMessage = document.getElementById('violence');
-    var ViD = document.getElementById('vd');
-    var Weapon = document.getElementById('wpn');
     var Nothing = document.getElementById('nothing');
     var fcount = 0;
     
