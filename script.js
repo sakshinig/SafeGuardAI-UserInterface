@@ -64,7 +64,7 @@ var callAPI = ()=>{
   })
   .catch(error => console.log('error', error));
 
-  //document.getElementById("report").innerHTML = response;
+  //document.gthidetElementById("report").innerHTML = response;
 }
 
 // Get the Sidebar
@@ -88,4 +88,9 @@ function w3_open() {
 function w3_close() {
   mySidebar.style.display = "none";
   overlayBg.style.display = "none";
+}
+
+function changeBG(){
+  var lol = document.getElementById("lol");
+  lol.style.display = "block";
 }
