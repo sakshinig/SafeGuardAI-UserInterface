@@ -13,6 +13,9 @@
 #nothing {
   display: block;
 }
+#vidaven {
+  display: none;
+}
 video {
   max-width: 100%;
   height: auto;

@@ -42,19 +42,19 @@ var callAPI = ()=>{
     if  (isRiot){
       Nothing.style.display = 'none';
       ViolenceMessage.style.display = 'block';
-      document.getElementById("rcscore").innerHTML = str.slice(str.indexOf("Riot")+4+14, str.indexOf("Riot")+4+19) + "%";
+      document.getElementById("rcscore").innerHTML = str.slice(str.indexOf("Riot")+4+14, str.indexOf("Riot")+4+19) + "% Confidence Score";
       fcount++;
     }
     if (isFire){
       Nothing.style.display = 'none';
       ViD.style.display = 'block';
-      document.getElementById("cscore").innerHTML = str.slice(str.indexOf("Gun")+3+14, str.indexOf("Gun")+3+19) + "%";
+      document.getElementById("cscore").innerHTML = str.slice(str.indexOf("Gun")+3+14, str.indexOf("Gun")+3+19) + "% Confidence Score";
       fcount++;
     }
     if (isWeapon){
       Nothing.style.display = 'none';
       Weapon.style.display = 'block';
-      document.getElementById("wscore").innerHTML = str.slice(str.indexOf("Weapon")+6+14, str.indexOf("Weapon")+6+19) + "%";
+      document.getElementById("wscore").innerHTML = str.slice(str.indexOf("Weapon")+6+14, str.indexOf("Weapon")+6+19) + "% Confidence Score";
       fcount++;
     }
     
@@ -93,4 +93,13 @@ function w3_close() {
 function changeBG(){
   var lol = document.getElementById("lol");
   lol.style.display = "block";
+}
+
+function clickdrop() {
+  var selectedOption = document.getElementById("select").value;
+  if (selectedOption === "avengers") {
+    document.getElementById("vidaven").style.display = "block";
+  } else {
+    document.getElementById("vidaven").style.display = "none";
+  }
 }

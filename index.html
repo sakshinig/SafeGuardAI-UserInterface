@@ -92,8 +92,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-twothird">
         <h5><b>Security Camera Footage</b></h5>
+        <label for="select">Choose an input method:</label>
+        <select id="select">
+          <option value="camera">Live Video - Camera</option>
+          <option value="extr">External Camera</option>
+          <option value="avengers">Avengers Clip (Demo)</option>
+        </select>
+        <br>
+        <button type="button" onclick="clickdrop()" class="w3-dark-grey w3-text-white w3-hover">Submit</button>
+        <div id= "vidaven" class= "w3-padding-24">
         <video src="avenhtml.mp4" controls>
         </video>
+        </div>
       </div>
       <div class="w3-third">
         <h5><b>Report</b></h5>
