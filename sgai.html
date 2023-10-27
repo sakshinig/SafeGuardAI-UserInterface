@@ -12,7 +12,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body id = "body" class="w3-grey">
+<body class="w3-grey">
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
@@ -52,23 +52,102 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header class="w3-container" style="padding-top:22px">
-    <h4><b><i class="fa fa-cog"></i> Settings</b></h4>
+    <h4><b><i class="fa fa-dashboard"></i> Dashboard</b></h4>
   </header>
 
-<div class= "w3-panel">
-    <!-- Rounded switch -->
-  <label class="switch">
-    <input onclick="changeBG()" type="checkbox">
-    <span class="slider round"></span>
-  </label>
+  <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-third">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-bell w3-text-white w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3 id="fcount">0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Flagged</h4>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="w3-container w3-dark-grey w3-padding-16">
+        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>0</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Curation</h4>
+      </div>
+    </div>
+    <div class="w3-third">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>1</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Users</h4>
+      </div>
+    </div>
+  </div>
 
-  <p id="lol">You really thought that did something huh. Nothing changed :P</p>
-</div>
-
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-twothird">
+        <h5><b>Security Camera Footage</b></h5>
+        <label for="select">Choose an input method:</label>
+        <select id="select">
+          <option value="camera">Live Video - Camera</option>
+          <option value="extr">External Camera</option>
+          <option value="avengers">Avengers Clip (Demo)</option>
+        </select>
+        <br>
+        <button type="button" onclick="clickdrop()" class="w3-dark-grey w3-text-white w3-hover">Submit</button>
+        <div id= "vidaven" class= "w3-padding-24">
+        <video src="avenhtml.mp4" controls>
+        </video>
+        </div>
+      </div>
+      <div class="w3-third">
+        <h5><b>Report</b></h5>
+        <table class="w3-table-all">
+          <tr>
+            <p id="nothing" class="w3-center w3-text-dark-grey">Nothing to show.</p>
+          </tr>
+          <tr id="violence" class="w3-hover-grey">
+            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+            <td><b>Riot</b></td>
+            <td id="rcscore"><i>Confidence</i></td>
+          </tr>
+          <tr id="vd" class="w3-hover-grey">
+            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+            <td><b>Firearms</b></td>
+            <td id="cscore"><i>Confidence</i></td>
+          </tr>
+          <tr id="wpn" class="w3-hover-grey">
+            <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+            <td><b>Weapons</b></td>
+            <td id="wscore"><i>Confidence</i></td>
+          </tr>
+          <div id="loader" class="loader" ></div>
+          <!--<tr>
+            <td><i class="fa fa-users w3-text-orange w3-large"></i></td>
+            <td>New record, over 40 users.</td>
+            <td><i>17 mins</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+            <td>CPU overload.</td>
+            <td><i>35 mins</i></td>
+          </tr>-->
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="w3-container">
+    <button onclick="callAPI()" class="w3-button w3-dark-grey w3-text-white w3-card-4">Generate Detection Report <i class="fa fa-arrow-right"></i></button>
+  </div>
 
   
   <br>
-  <div class="w3-bottom">
+  
   <div class="w3-container w3-dark-grey w3-padding-32">
     <div class="w3-row">
       <div class="w3-container w3-twothird">
@@ -90,7 +169,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- End page content -->
 </div>
-</div>
+
 <script src="script.js"></script>
 
 </body>
