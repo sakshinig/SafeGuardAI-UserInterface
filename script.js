@@ -42,19 +42,19 @@ var callAPI = ()=>{
     if  (isRiot){
       Nothing.style.display = 'none';
       ViolenceMessage.style.display = 'block';
-      document.getElementById("rcscore").innerHTML = str.slice(str.indexOf("Riot")+4+14, str.indexOf("Riot")+4+19) + "% Confidence Score";
+      document.getElementById("rcscore").innerHTML = str.slice(str.indexOf("Riot")+4+14, str.indexOf("Riot")+4+19) + "% Confidence";
       fcount++;
     }
     if (isFire){
       Nothing.style.display = 'none';
       ViD.style.display = 'block';
-      document.getElementById("cscore").innerHTML = str.slice(str.indexOf("Gun")+3+14, str.indexOf("Gun")+3+19) + "% Confidence Score";
+      document.getElementById("cscore").innerHTML = str.slice(str.indexOf("Gun")+3+14, str.indexOf("Gun")+3+19) + "% Confidence";
       fcount++;
     }
     if (isWeapon){
       Nothing.style.display = 'none';
       Weapon.style.display = 'block';
-      document.getElementById("wscore").innerHTML = str.slice(str.indexOf("Weapon")+6+14, str.indexOf("Weapon")+6+19) + "% Confidence Score";
+      document.getElementById("wscore").innerHTML = str.slice(str.indexOf("Weapon")+6+14, str.indexOf("Weapon")+6+19) + "% Confidence";
       fcount++;
     }
     
